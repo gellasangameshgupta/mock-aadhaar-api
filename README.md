@@ -1,24 +1,25 @@
 # Mock Aadhaar API
 
-A mock API that provides fake Aadhaar (Indian national ID) data for testing purposes. This API contains **1,000,050** unique mock records with realistic Indian names, addresses, and demographic information.
+A mock API that provides fake Aadhaar (Indian national ID) data for testing purposes. This API contains **300,000** unique mock records with realistic Indian names, addresses, and demographic information.
 
 ## 🌟 Features
 
-- **1M+ Records**: Over 1 million unique mock Aadhaar entries
+- **300K Records**: 300,000 unique mock Aadhaar entries
 - **Realistic Data**: Indian names, cities, states, and postal codes
 - **Diverse Demographics**: Balanced gender distribution and age ranges (19-75 years)
 - **Geographic Coverage**: Data from all major Indian states and 50+ cities
 - **RESTful API**: Simple GET endpoint for data retrieval
 - **CORS Enabled**: Ready for web application integration
 - **Utility Tools**: Built-in data management and search utilities
+- **GitHub Compatible**: File size optimized for version control
 
 ## 📊 Dataset Statistics
 
-- **Total Records**: 1,000,050
+- **Total Records**: 300,000
 - **Gender Distribution**: ~50% Male, ~50% Female
 - **Age Range**: 19-75 years (Average: 47 years)
 - **Geographic Coverage**: 29+ states and 50+ cities across India
-- **File Size**: 285MB
+- **File Size**: 62MB (GitHub compatible)
 
 ## 🚀 API Usage
 
@@ -29,7 +30,7 @@ GET /.netlify/functions/getUserData?aadhaar=<12-digit-number>
 
 ### Example Request
 ```bash
-curl "https://your-api-url/.netlify/functions/getUserData?aadhaar=123456789012"
+curl "https://your-api-url/.netlify/functions/getUserData?aadhaar=689852462784"
 ```
 
 ### Example Response
@@ -37,16 +38,16 @@ curl "https://your-api-url/.netlify/functions/getUserData?aadhaar=123456789012"
 {
   "success": true,
   "data": {
-    "name": "Rajesh Kumar",
+    "name": "Rajesh Khan",
     "gender": "Male",
-    "dateOfBirth": "1985-06-15",
-    "age": 39,
+    "dateOfBirth": "2004-05-19",
+    "age": 21,
     "address": {
-      "street1": "123 MG Road",
-      "street2": "Near City Mall",
-      "city": "Bangalore",
-      "postalCode": "560001",
-      "state": "Karnataka"
+      "street1": "836 Model Town",
+      "street2": "Ring Road",
+      "city": "Delhi",
+      "postalCode": "110024",
+      "state": "Delhi"
     }
   }
 }
@@ -129,12 +130,13 @@ node generateMockData.js
 
 ```
 ├── data/
-│   └── mockData.js          # 1M+ mock Aadhaar records (285MB)
+│   ├── mockData.js          # 300K mock Aadhaar records (62MB)
+│   └── mockData.backup.js   # Original 1M+ records backup (285MB)
 ├── netlify/
 │   └── functions/
 │       └── getUserData.js   # API endpoint function
 ├── dataUtils.js             # Data management utilities
-├── generateMockData.js      # Data generation script
+├── reduceMockData.js        # Data size reduction script
 ├── netlify.toml            # Netlify configuration
 └── package.json            # Project dependencies
 ```
