@@ -1,0 +1,17 @@
+{
+  "name": "mock-aadhaar-api",
+  "version": "1.0.0",
+  "description": "Mock API for fetching user data by Aadhaar number",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": ["api", "netlify", "mock", "serverless"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
